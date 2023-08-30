@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- *-mapping.xml : DB 쿼리문을 관리, DB와 상호작용하는 파일 -->  
+<!-- 아래 태그: mapper 인터페이스 -->
+<mapper namespace="user.UserMapper">
+
+<!-- 존재 여부 확인: exists 사용 - resultType int -->
+<select id="checkId" parameterType="String" resultType="int" >
+	select exists (select*from user where userid=#{userid});
+</select>
+
+<select id="checkNick" parameterType="String" resultType="int" >
+	select exists (select*from user where nickname=#{nickname});
+</select>
+
+<select id="checkPw" parameterType="hashmap" resultType="int">
+	select exists (select*from user where name=#{name} and email=#{email});
+</select>
+
+<update id="updatePw" parameterType="hashmap">
+update user
+set userpw=#{userpw}
+where userid=#{userid};
+</update>
+
+<insert id="insertUser" parameterType="UserDTO">
+	insert into user(userid, userpw, email, postcode, roadAddress, detailAddress, extraAddress, tel, name, nickname) 
+	values(#{userid},#{userpw},#{email},#{postcode}, #{roadAddress}, #{detailAddress}, #{extraAddress},#{tel},#{name},#{nickname});
+</insert>
+
+<select id="getUserInfo" parameterType="String" resultType="UserDTO">
+	select*from user where userid=#{userid};
+</select>
+
+<select id="findId" parameterType="hashmap" resultType="String">
+	select userid from user where name=#{name} and email=#{email};
+</select>
+</mapper>
+
+
+
+
+

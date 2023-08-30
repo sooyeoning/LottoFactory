@@ -1,0 +1,76 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: 'SUIT-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html{
+	width: 60vw;
+	margin: 0 20vw;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'SUIT-Regular';
+}
+.font25{
+	font-size: 25px;
+}
+.mb-10{
+	margin-bottom: 10vh;
+}
+.mt-20{
+	margin-top: 20vh;
+}
+.form-floating>.form-control{
+	width: 40vw;
+}
+#container {
+	width: 60vw;
+	border: 1px solid gray;
+	text-align: center;
+	margin: 10vh auto 1vh; /*중앙정렬*/
+}
+
+#loginbtn, #signinbtn {
+	margin: 1vh 1vw 1vh 1vw;
+	float: right;
+	border: none;
+	background-color: white;
+}
+
+#menu{
+	align-items: center;
+	margin-bottom: 1vh;
+	/*60vw에 맞게 메뉴 균등 배분*/
+	display: flex;
+	width: 60vw;
+}
+
+#loginmenu {
+	height: 4vh;
+}
+
+#footer-container{
+	height: 20vh;
+	background-color: gray;
+	text-align: center;
+	/*하단 고정*/
+}
+
+.menuf{
+	color: white;
+	display: inline;
+}
+
+#left-container{
+	width:30vw;
+	margin-left: 20vw;
+	float: left;
+	border: 1px solid black;
+}
+
